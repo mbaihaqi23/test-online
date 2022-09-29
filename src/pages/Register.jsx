@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       axios
-        .post("94.74.86.174:8080/register", values)
+        .post("http://94.74.86.174:8080/register", values)
         .then((res) => navigate("/login"))
         .catch((err) => {
           alert("something wrong!");
@@ -34,7 +34,7 @@ const Register = () => {
                         <div className="field mt-5">
                             <label className="label">Name</label>
                             <div className="controls">
-                                <input  id="name"  name="name" type="name" className="input" placeholder="Name" onChange={handleChange}/>
+                                <input  id="username"  name="username" type="name" className="input" placeholder="Name" onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="field mt-5">

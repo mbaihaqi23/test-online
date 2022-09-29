@@ -22,11 +22,10 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-          .post("https://binar-blog-app.herokuapp.com/login", values)
+          .post("http://94.74.86.174:8080/login", values)
           .then((res) => {
             const { accessToken, id, email } = res.data;
             setCookies("accessToken", accessToken, { maxAge: 3600 });
-            setCookies("userId", id, { maxAge: 3600 });
             setCookies("email", email, { maxAge: 3600 });
             navigate("/dashboard");
           })
